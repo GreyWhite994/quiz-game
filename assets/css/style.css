@@ -14,3 +14,30 @@ body {
     font-size: 2.5rem;
     font-family: "Oswald", sans-serif;
 }
+
+/* Quiz layout */
+
+#quiz {
+    background-color: #E6ECF0;
+    box-sizing: border-box;
+    width: 85%;
+    height: 65vh;
+    max-height: 450px;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+/* Submit button */
+
+#submit {
+    margin: 20px;
+    height: 30px;
+}
+
+#submit:hover {
+    background-color: yellow;
+}
+
+/* Media queries */

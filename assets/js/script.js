@@ -22,7 +22,7 @@ var questions = [
             d: 'Peryite'
 		},
 		correctAnswer: 'b'
-	}
+	},
     {
 		question: "What race has a special connection to the Hist Trees ?",
 		answers: {
@@ -32,7 +32,7 @@ var questions = [
             d: 'Argonians'
 		},
 		correctAnswer: 'd'
-	}
+	},
     {
 		question: "What is the name of the two moons which appear in the night sky over Tamriel ?",
 		answers: {
@@ -42,7 +42,7 @@ var questions = [
             d: 'Shor and Kyne'
 		},
 		correctAnswer: 'c'
-	}
+	},
     {
 		question: "The realm of Oblivion, Moonshadow belongs to which Daedric Prince ?",
 		answers: {
@@ -52,7 +52,7 @@ var questions = [
             d: 'Mehrunes Dagon'
 		},
 		correctAnswer: 'a'
-	}
+	},
     {
 		question: "What is the capital city of Skyrim ?",
 		answers: {
@@ -62,7 +62,7 @@ var questions = [
             d: 'Windhelm'
 		},
 		correctAnswer: 'c'
-	}
+	},
     {
 		question: "What is the first month on the Tamrielic calendar ?",
 		answers: {
@@ -72,7 +72,7 @@ var questions = [
             d: 'Hearthfire'
 		},
 		correctAnswer: 'a'
-	}
+	},
     {
 		question: "Who founded the Second Empire of Tamriel ?",
 		answers: {
@@ -82,7 +82,7 @@ var questions = [
             d: 'Reman Cyrodiil'
 		},
 		correctAnswer: 'd'
-	}
+	},
     {
 		question: "What is the name given to the afterlife of the Nords ?",
 		answers: {
@@ -92,7 +92,7 @@ var questions = [
             d: 'The Sands Behind the Stars'
 		},
 		correctAnswer: 'c'
-	}
+	},
     {
 		question: "What is the Argonian native language ?",
 		answers: {
