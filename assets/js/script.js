@@ -104,3 +104,11 @@ var questions = [
 		correctAnswer: 'b'
 	}
 ];
+
+function displayQuestions(questions, quizArea) {
+
+}
+
+function displayResults(questions, quizArea, resultsArea) {
+
+}
