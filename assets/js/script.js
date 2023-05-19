@@ -1,8 +1,8 @@
-var quizArea = document.getElementById('quiz');
-var resultsArea = document.getElementById('results');
-var submit = document.getElementById('submit');
+let quizArea = document.getElementById('quiz');
+let resultsArea = document.getElementById('results');
+let submit = document.getElementById('submit');
 
-var questions = [
+let questions = [
 	{
 		question: "What is the name of the land the Nords originally came from ?",
 		answers: {
@@ -105,10 +105,33 @@ var questions = [
 	}
 ];
 
-function displayQuestions(questions, quizArea) {
+function displayQuiz(questions, quizArea) {
+	let quiz = [];
 
+	for (let i=0; i<questions.length; i++) {
+
+		let answers=[];
+
+		for(letter in questions[i].answers) {
+			answers.push(
+				'<label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+					+ letter + ': '
+					+ questions[i].answers[letter]
+				+ '</label>'
+			);
+		}
+
+		quiz.push(
+			'<div class="question">' + questions[i].question + '</div>'
+			+ '<div class="answers">' + answers.join('') + '</div>'
+		);
+	}
+	quizArea.innerHTML = quiz.join('');
 }
 
 function displayResults(questions, quizArea, resultsArea) {
 
 }
+
+displayQuiz(questions, quizArea);
