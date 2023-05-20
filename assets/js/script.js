@@ -153,7 +153,13 @@ function displayResults(questions, quizArea, resultsArea) {
 		}
 	}
 
-	resultsArea.innerHTML = numCorrect + ' out of ' + questions.length;
+	resultsArea.innerHTML = numCorrect + ' out of ' + questions.length + '<br></br>' + '<button id="replay">Start Again?</Button>';
+
+	let replay = document.getElementById("replay");
+	replay.onclick = function() {
+		resultsArea.innerHTML = '';
+		startQuiz()
+	}
 
 	}
 
