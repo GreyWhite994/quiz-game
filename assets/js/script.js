@@ -1,6 +1,7 @@
 let quizArea = document.getElementById('quiz');
 let resultsArea = document.getElementById('results');
 let submit = document.getElementById('submit');
+let start = document.getElementById("start");
 
 let questions = [
 	{
@@ -153,12 +154,16 @@ function displayResults(questions, quizArea, resultsArea) {
 	}
 
 	resultsArea.innerHTML = numCorrect + ' out of ' + questions.length;
-	
+
 	}
 
-
-displayQuiz(questions, quizArea);
-
-submit.onclick = function(){
+function startQuiz() {
+	displayQuiz(questions, quizArea);
+	submit.onclick = function(){
 		displayResults(questions, quizArea, resultsArea);
 	}
+}
+
+start.onclick = function() {
+	startQuiz()
+}
