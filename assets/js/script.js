@@ -126,12 +126,39 @@ function displayQuiz(questions, quizArea) {
 			'<div class="question">' + questions[i].question + '</div>'
 			+ '<div class="answers">' + answers.join('') + '</div>'
 		);
-	}
-	quizArea.innerHTML = quiz.join('');
-}
+		}
+		quizArea.innerHTML = quiz.join('');
+	}	
 
 function displayResults(questions, quizArea, resultsArea) {
 
-}
+	let containAnswers = quizArea.querySelectorAll('.answers');
+	let userAnswer = '';
+	let numCorrect = 0;
+
+	for(let i=0; i<questions.length; i++) {
+
+		userAnswer = (containAnswers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+
+		if(userAnswer===questions[i].correctAnswer){
+			
+			numCorrect++;
+			
+			containAnswers[i].style.color = 'lightgreen';
+		}
+		
+		else{
+			containAnswers[i].style.color = 'red';
+		}
+	}
+
+	resultsArea.innerHTML = numCorrect + ' out of ' + questions.length;
+	
+	}
+
 
 displayQuiz(questions, quizArea);
+
+submit.onclick = function(){
+		displayResults(questions, quizArea, resultsArea);
+	}
