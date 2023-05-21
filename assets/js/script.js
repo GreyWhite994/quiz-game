@@ -6,13 +6,13 @@ let results_image = document.getElementById('results_image');
 let login = document.getElementById('form-submit');
 
 // Login code below
-let user_details = {};
+let user_details = localStorage.getItem('user_details')
 
 login.onclick = function validateForm() {
 let username = document.getElementById('username-field').value;
 let password = document.getElementById('password-field').value;
 user_details[username] = password;
-console.log(user_details)
+localStorage.setItem('user_details', user_details)
 }
 
 // quiz code
