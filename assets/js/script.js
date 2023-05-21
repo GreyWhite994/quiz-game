@@ -2,7 +2,20 @@ let quizArea = document.getElementById('quiz');
 let resultsArea = document.getElementById('results');
 let submit = document.getElementById('submit');
 let start = document.getElementById("start");
-let results_image = document.getElementById("results_image");
+let results_image = document.getElementById('results_image');
+let login = document.getElementById('form-submit');
+
+// Login code below
+let user_details = {};
+
+login.onclick = function validateForm() {
+let username = document.getElementById('username-field').value;
+let password = document.getElementById('password-field').value;
+user_details[username] = password;
+console.log(user_details)
+}
+
+// quiz code
 
 let questions = [
 	{
@@ -191,6 +204,6 @@ function startQuiz() {
 	}
 }
 
-start.onclick = function() {
+start.onclick = function(){
 	startQuiz()
 }
