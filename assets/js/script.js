@@ -2,6 +2,7 @@ let quizArea = document.getElementById('quiz');
 let resultsArea = document.getElementById('results');
 let submit = document.getElementById('submit');
 let start = document.getElementById("start");
+let results_image = document.getElementById("results_image");
 
 let questions = [
 	{
@@ -153,11 +154,31 @@ function displayResults(questions, quizArea, resultsArea) {
 		}
 	}
 
-	resultsArea.innerHTML = numCorrect + ' out of ' + questions.length + '<br></br>' + '<button id="replay">Start Again?</Button>';
+	if (numCorrect >= 8){
+		results_image.innerHTML = '<img id=score_image src=assets/images/todd.png alt=score_image></img>'
+		resultsArea.innerHTML = 'Well done! You got ' + numCorrect + ' out of ' + questions.length + ', Todd Howard would be proud' + '<br></br>' + '<button id="replay">Start Again?</Button>';
+		}
+	else if (numCorrect >=6){
+		results_image.innerHTML = '<img id=score_image src=assets/images/alduin.png alt=score_image></img>'
+		resultsArea.innerHTML = 'Good job! You got ' + numCorrect + ' out of ' + questions.length + ', keep trying to improve your Elder Scrolls knowledge' + '<br></br>' + '<button id="replay">Start Again?</Button>';
+		}
+	else if (numCorrect >=4) {
+		results_image.innerHTML = '<img id=score_image src=assets/images/oblivion.png alt=score_image></img>'
+		resultsArea.innerHTML = 'Ouch, you only got ' + numCorrect + ' out of ' + questions.length + ', you deserve to be sent to Oblivion' + '<br></br>' + '<button id="replay">Start Again?</Button>';
+	}
+	else if (numCorrect >=2) {
+		results_image.innerHTML = '<img id=score_image src=assets/images/db.png alt=score_image></img>'
+		resultsArea.innerHTML = "I can't believe you only got " + numCorrect + ' out of ' + questions.length + ", I'm sending the Dark Brotherhood after you!" + '<br></br>' + '<button id="replay">Start Again?</Button>';
+	}
+	else if (numCorrect >=0) {
+		results_image.innerHTML = '<img id=score_image src=assets/images/giant.png alt=score_image></img>'
+		resultsArea.innerHTML = "This couldn't be worse, you got " + numCorrect + ' out of ' + questions.length + ", you know about as much as a frost giant!" + '<br></br>' + '<button id="replay">Start Again?</Button>';
+	}
 
 	let replay = document.getElementById("replay");
 	replay.onclick = function() {
 		resultsArea.innerHTML = '';
+		results_image.innerHTML=''
 		startQuiz()
 	}
 
