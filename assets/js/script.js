@@ -4,16 +4,38 @@ let submit = document.getElementById('submit');
 let start = document.getElementById("start");
 let results_image = document.getElementById('results_image');
 let login = document.getElementById('form-submit');
+let welcome = document.getElementById('welcome-msg');
 
 // Login code below
-let user_details = localStorage.getItem('user_details')
 
-login.onclick = function validateForm() {
-let username = document.getElementById('username-field').value;
-let password = document.getElementById('password-field').value;
-user_details[username] = password;
-localStorage.setItem('user_details', user_details)
+function createCookie(name, value) {
+	document.cookie = name + '=' + value;
 }
+// code from stackOverflow
+function getCookie(name) {
+	name = name + '=';
+	let cookies =document.cookie.split(';');
+	for(let i=0; i<cookies.length; i++) {
+		let cookie = cookies[i];
+		while (cookie.charAt(0)==' ') {
+			cookie = cookie.substring(1);
+		}
+		if (cookie.indexOf(name) == 0) {
+			return cookie.substring(name.length,cookie.length);
+		}
+	}
+	return "";
+}
+
+login.onclick = function() {
+	let user = document.getElementById("username-field").value;
+	let identifier = "username"
+	createCookie(identifier, user);
+	username = getCookie(identifier);
+	welcome.innerHTML = 'Hello ' + username + ', welcome to the Elder Scrolls Quiz!'
+}
+
+
 
 // quiz code
 
