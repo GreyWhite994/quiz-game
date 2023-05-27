@@ -1,7 +1,7 @@
 /* Global style */
 
 body {
-    background-color: white;
+    background: url(../images/skyrim_snow.jpg) 20% 20% no-repeat;
     font-family: "Lato", sans-serif;
     color: #445361 ;
     text-align: center;
@@ -21,7 +21,7 @@ body {
     background-color: #E6ECF0;
     box-sizing: border-box;
     width: 85%;
-    height: 65vh;
+    height: 85%;
     max-height: 450px;
     max-width: 830px;
     margin-left: auto;
