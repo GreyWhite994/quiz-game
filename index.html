@@ -14,14 +14,22 @@
     <nav id="menu">
         <button id="dropdown">Menu</button>
         <div id="links">
-            <a href="index.html">Quiz</a>
-            <a href="login.html">Login</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#username">Create Username</a>
         </div>
     </nav>
     <h1 class="heading">
         Elder Scrolls Quiz
     </h1>
-    <h3 class="heading">Login/Sign-up</h3>
+    <div id="quiz">
+        <button id="start">Start Quiz!</button>
+    </div>
+
+    <button id="submit">Get Results</button>
+    <div id="results_image"></div> 
+    <div id="results"></div>
+
+    <h3 id="username">Create Username:</h3>
         <div>
           <p id="welcome-msg"></p>
         </div>
@@ -30,13 +38,6 @@
           <input type="text" name="username" id="username-field" class="form-input" placeholder="Username" required>
           <input type="submit" value="submit" id="form-submit">
         </form>
-    <div id="quiz">
-        <button id="start">Start Quiz!</button>
-    </div>
-
-    <button id="submit">Get Results</button>
-    <div id="results_image"></div> 
-    <div id="results"></div>
 
     <script src="assets/js/script.js"></script>
 </body>
