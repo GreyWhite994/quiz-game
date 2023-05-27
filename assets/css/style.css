@@ -5,6 +5,11 @@ body {
     font-family: "Lato", sans-serif;
     color: snow;
     text-align: center;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 /* Heading */
@@ -14,11 +19,6 @@ body {
     font-family: "Oswald", sans-serif;
     max-width: fit-content;
     margin: 0 auto;
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
 }
 
 /* Menu */
@@ -47,7 +47,7 @@ body {
     text-align: center;
     width: 90px;
     text-decoration: none;
-    color: black;
+    color: snow;
 }
 
 #links a:hover {
@@ -70,16 +70,16 @@ body {
 #quiz {
     background-color: slategray;
     box-sizing: border-box;
-    width: 85%;
-    height: 85%;
-    max-height: 450px;
-    max-width: 830px;
-    margin-left: auto;
-    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
     padding: 1%;
 }
 
-/* Submit button */
+/* Results section */
+
+#results_background {
+}
 
 #submit {
     margin: 20px;
@@ -88,6 +88,17 @@ body {
 
 #submit:hover {
     background-color: lightgray;
+}
+
+/* Create username section */
+
+#username_background {
+    background-color: slategray;
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 1%;
 }
 
 /* Media queries */
