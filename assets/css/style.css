@@ -12,6 +12,17 @@ body {
 		1px 1px 0 #000;
 }
 
+.btn {
+    margin: 20px;
+    height: 30px;
+    background-color: snow;
+}
+
+.btn:hover {
+    background-color: skyblue;
+    font-weight: bolder;
+}
+
 /* Heading */
 
 .heading {
@@ -33,11 +44,12 @@ body {
     letter-spacing: 2px;
     padding: 6px;
     margin-top:20px;
+    background-color: snow;
 }
 
 #links {
     display: none;
-    background-color: whitesmoke;
+    background-color: slategray;
     z-index: 1;
 }
 
@@ -51,7 +63,7 @@ body {
 }
 
 #links a:hover {
-    background-color: slategray;
+    background-color: skyblue;
     font-weight: bolder;
 }
 
@@ -61,7 +73,7 @@ body {
 }
 
 #menu:hover #dropdown {
-    background-color: slategray;
+    background-color: skyblue;
     font-weight: bold;
 }
 
@@ -81,16 +93,6 @@ body {
 /* Results section */
 
 
-
-#submit {
-    margin: 20px;
-    height: 30px;
-}
-
-#submit:hover {
-    background-color: lightgray;
-}
-
 /* Create username section */
 
 #username_background {
@@ -102,6 +104,10 @@ body {
     height: fit-content;
     margin: 20px auto;
     padding: 1%;
+}
+
+#form-submit {
+    margin: 0 auto;
 }
 
 /* Media queries */
