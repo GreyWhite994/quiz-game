@@ -114,3 +114,13 @@ body {
 
 /* Media queries */
 
+@media screen and (max-width: 730px) {
+
+    body {
+        background: url(../images/skyrim_snow.jpg) top repeat-y;
+    }
+
+    label {
+        display: block;
+    }
+}
