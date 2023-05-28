@@ -1,7 +1,7 @@
 /* Global style */
 
 body {
-    background: url(../images/skyrim_snow.jpg) 20% 20% no-repeat;
+    background: url(../images/skyrim_snow.jpg) 15% 20% no-repeat;
     font-family: "Lato", sans-serif;
     color: snow;
     text-align: center;
@@ -95,9 +95,6 @@ body {
     margin: 15px;
 }
 
-/* Results section */
-
-
 /* Create username section */
 
 #username_background {
@@ -116,3 +113,4 @@ body {
 }
 
 /* Media queries */
+
