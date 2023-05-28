@@ -70,16 +70,17 @@ body {
 #quiz {
     background-color: slategray;
     box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 25px;
     width: fit-content;
     height: fit-content;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 1%;
 }
 
 /* Results section */
 
-#results_background {
-}
+
 
 #submit {
     margin: 20px;
@@ -95,9 +96,11 @@ body {
 #username_background {
     background-color: slategray;
     box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 25px;
     width: fit-content;
     height: fit-content;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 1%;
 }
 
