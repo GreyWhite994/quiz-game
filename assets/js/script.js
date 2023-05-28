@@ -144,9 +144,10 @@ let questions = [
 
 function displayQuiz(questions, quizArea) {
 	let quiz = [];
+	let qNumber = 0;
 
 	for (let i=0; i<questions.length; i++) {
-
+		qNumber = qNumber+1;
 		let answers=[];
 
 		for(letter in questions[i].answers) {
@@ -160,11 +161,12 @@ function displayQuiz(questions, quizArea) {
 		}
 
 		quiz.push(
-			'<div class="question">' + questions[i].question + '</div>'
+			'<div class="question">' + qNumber + '. ' + questions[i].question + '</div>'
 			+ '<div class="answers">' + answers.join('') + '</div>'
 		);
 		}
 		quizArea.innerHTML = quiz.join('');
+		
 	}	
 
 function displayResults(questions, quizArea, resultsArea) {

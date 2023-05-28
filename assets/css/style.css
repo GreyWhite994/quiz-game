@@ -90,6 +90,11 @@ body {
     padding: 1%;
 }
 
+.question {
+    font-size: 120%;
+    margin: 15px;
+}
+
 /* Results section */
 
 
