@@ -7,11 +7,13 @@ let login = document.getElementById('form-submit');
 let welcome = document.getElementById('welcome-msg');
 
 // Login code below
+// code from stackOverflow
+
 
 function createCookie(name, value) {
 	document.cookie = name + '=' + value;
 }
-// code from stackOverflow
+
 function getCookie(name) {
 	name = name + '=';
 	let cookies =document.cookie.split(';');
@@ -34,8 +36,6 @@ login.onclick = function() {
 	username = getCookie(identifier);
 	welcome.innerHTML = 'Hello ' + username + ', welcome to the Elder Scrolls Quiz!'
 }
-
-
 
 // quiz code
 
