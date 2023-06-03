@@ -32,7 +32,7 @@ body {
     margin: 0 auto;
 }
 
-/* Menu */
+/* Dropdown Menu */
 
 #menu {
     margin: 0 auto;
@@ -95,7 +95,7 @@ body {
     margin: 15px;
 }
 
-/* Create username section */
+/* Create username layout */
 
 #username_background {
     background-color: slategray;
