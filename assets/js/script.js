@@ -1,43 +1,14 @@
+// Get all elements required to run the quiz, results and create username sections
+
 let quizArea = document.getElementById('quiz');
 let resultsArea = document.getElementById('results');
 let submit = document.getElementById('submit');
 let start = document.getElementById("start");
 let results_image = document.getElementById('results_image');
-let login = document.getElementById('form-submit');
+let create_username = document.getElementById('form-submit');
 let welcome = document.getElementById('welcome-msg');
 
-// Login code below
-// code from stackOverflow
-
-
-function createCookie(name, value) {
-	document.cookie = name + '=' + value;
-}
-
-function getCookie(name) {
-	name = name + '=';
-	let cookies =document.cookie.split(';');
-	for(let i=0; i<cookies.length; i++) {
-		let cookie = cookies[i];
-		while (cookie.charAt(0)==' ') {
-			cookie = cookie.substring(1);
-		}
-		if (cookie.indexOf(name) == 0) {
-			return cookie.substring(name.length,cookie.length);
-		}
-	}
-	return "";
-}
-
-login.onclick = function() {
-	let user = document.getElementById("username-field").value;
-	let identifier = "username"
-	createCookie(identifier, user);
-	username = getCookie(identifier);
-	welcome.innerHTML = 'Hello ' + username + ', welcome to the Elder Scrolls Quiz!'
-}
-
-// quiz code
+// array containing questions and answers, as well as the correct answers for the quiz
 
 let questions = [
 	{
@@ -142,6 +113,12 @@ let questions = [
 	}
 ];
 
+/**
+ * Displays quiz and answers, is called on click of start.
+ * Iterates through question array, puts questions and answers in quiz array and answers array respectively.
+ * Joins them together and displays in quizArea.
+ */
+
 function displayQuiz(questions, quizArea) {
 	let quiz = [];
 	let qNumber = 0;
@@ -167,7 +144,16 @@ function displayQuiz(questions, quizArea) {
 		}
 		quizArea.innerHTML = quiz.join('');
 		
-	}	
+	}
+	
+/**
+ * Displays results of quiz, is called on click of submit.
+ * Takes userAnswer and compares it to correct answer as per questions array.
+ * If correct, numCorrect increments and answer becomes green.
+ * Otherwise, answer becomes red.
+ * Different result and image shown depending on score out of the quiz length.
+ * Replay on click will wipe results section and reset quiz.
+ */
 
 function displayResults(questions, quizArea, resultsArea) {
 
@@ -220,14 +206,56 @@ function displayResults(questions, quizArea, resultsArea) {
 	}
 
 	}
-
+/**
+ * Function to start the quiz which displays the quiz and allows user
+ * to display their results on click of submit.
+ */
 function startQuiz() {
 	displayQuiz(questions, quizArea);
 	submit.onclick = function(){
 		displayResults(questions, quizArea, resultsArea);
 	}
 }
-
+// On click of start, the startQuiz function will be called
 start.onclick = function(){
 	startQuiz()
+}
+
+// Allows user to create a username which will display back to them in a welcome message
+// functions createCookie and getCookie taken from StackOverflow with slight modifications, https://stackoverflow.com/questions/4825683/how-do-i-create-and-read-a-value-from-cookie-with-javascript
+/**
+ * Takes a name and value parameter and data is saved as a cookie
+ */
+function createCookie(name, value) {
+	document.cookie = name + '=' + value;
+}
+/**
+ * Splits cookies, iterates through them and returns specified cookie.
+ */
+function getCookie(name) {
+	name = name + '=';
+	let cookies =document.cookie.split(';');
+	for(let i=0; i<cookies.length; i++) {
+		let cookie = cookies[i];
+		while (cookie.charAt(0)==' ') {
+			cookie = cookie.substring(1);
+		}
+		if (cookie.indexOf(name) == 0) {
+			return cookie.substring(name.length,cookie.length);
+		}
+	}
+	return "";
+}
+/** 
+ * On click of create_username the value entered into username-field is taken and put into variable user
+ * identifier and user are passed to createCookie
+ * userName equals the return value of getCookie which is the value entered by the user
+ * A welcome message is displayed to the user with their chosen name
+*/
+create_username.onclick = function() {
+	let user = document.getElementById("username-field").value;
+	let identifier = "username"
+	createCookie(identifier, user);
+	userName = getCookie(identifier);
+	welcome.innerHTML = 'Hello ' + userName + ', welcome to the Elder Scrolls Quiz!'
 }
