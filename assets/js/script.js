@@ -7,7 +7,6 @@ let start = document.getElementById("start");
 let results_image = document.getElementById('results_image');
 let create_username = document.getElementById('form-submit');
 let welcome = document.getElementById('welcome-msg');
-let replay = document.getElementById("replay");
 
 // Array containing questions and answers, as well as the correct answers for the quiz
 
