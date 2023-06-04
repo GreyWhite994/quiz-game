@@ -7,6 +7,7 @@ let start = document.getElementById("start");
 let results_image = document.getElementById('results_image');
 let create_username = document.getElementById('form-submit');
 let welcome = document.getElementById('welcome-msg');
+let replay = document.getElementById("replay");
 
 // Array containing questions and answers, as well as the correct answers for the quiz
 
@@ -160,54 +161,56 @@ function displayResults(questions, quizArea, resultsArea) {
 	let containAnswers = quizArea.querySelectorAll('.answers');
 	let userAnswer = '';
 	let numCorrect = 0;
-	var questionsUnanswered = 0;
+	let notAnswered = 0;
 
 	for(let i=0; i<questions.length; i++) {
-
 		userAnswer = (containAnswers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 		
-		
 
-		if(userAnswer===questions[i].correctAnswer){
+		if (userAnswer===undefined) {
+			alert("Please answer all the questions!")
+			containAnswers[i].style.color = 'orange';
+			notAnswered+=1
+			break;
+		}
+		else if(userAnswer===questions[i].correctAnswer){
 			
 			numCorrect++;
 			
 			containAnswers[i].style.color = 'lightgreen';
 		}
-		else if (userAnswer === undefined) {
-			containAnswers[i].style.color = 'orange';
-		}
 		else{
 			containAnswers[i].style.color = 'red';
 		}
 	}
-
-	if (numCorrect >= 8){
-		results_image.innerHTML = '<img id=score_image src=assets/images/todd.png alt=score_image></img>'
-		resultsArea.innerHTML = 'Well done! You got ' + numCorrect + ' out of ' + questions.length + ', Todd Howard would be proud' + '<br></br>' + '<button id="replay" class="btn"S>Start Again?</Button>';
+	
+	if (notAnswered===0) {
+		if (numCorrect >= 8){
+			results_image.innerHTML = '<img id=score_image src=assets/images/todd.png alt=score_image></img>'
+			resultsArea.innerHTML = 'Well done! You got ' + numCorrect + ' out of ' + questions.length + ', Todd Howard would be proud' + '<br></br>' + '<button id="replay" class="btn"S>Start Again?</Button>';
+			}
+		else if (numCorrect >=6){
+			results_image.innerHTML = '<img id=score_image src=assets/images/alduin.png alt=score_image></img>'
+			resultsArea.innerHTML = 'Good job! You got ' + numCorrect + ' out of ' + questions.length + ', keep trying to improve your Elder Scrolls knowledge' + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
+			}
+		else if (numCorrect >=4) {
+			results_image.innerHTML = '<img id=score_image src=assets/images/oblivion.png alt=score_image></img>'
+			resultsArea.innerHTML = 'Ouch, you only got ' + numCorrect + ' out of ' + questions.length + ', you deserve to be sent to Oblivion' + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
 		}
-	else if (numCorrect >=6){
-		results_image.innerHTML = '<img id=score_image src=assets/images/alduin.png alt=score_image></img>'
-		resultsArea.innerHTML = 'Good job! You got ' + numCorrect + ' out of ' + questions.length + ', keep trying to improve your Elder Scrolls knowledge' + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
+		else if (numCorrect >=2) {
+			results_image.innerHTML = '<img id=score_image src=assets/images/db.png alt=score_image></img>'
+			resultsArea.innerHTML = "I can't believe you only got " + numCorrect + ' out of ' + questions.length + ", I'm sending the Dark Brotherhood after you!" + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
 		}
-	else if (numCorrect >=4) {
-		results_image.innerHTML = '<img id=score_image src=assets/images/oblivion.png alt=score_image></img>'
-		resultsArea.innerHTML = 'Ouch, you only got ' + numCorrect + ' out of ' + questions.length + ', you deserve to be sent to Oblivion' + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
+		else if (numCorrect >=0) {
+			results_image.innerHTML = '<img id=score_image src=assets/images/giant.png alt=score_image></img>'
+			resultsArea.innerHTML = "This couldn't be worse, you got " + numCorrect + ' out of ' + questions.length + ", you know about as much as a frost giant!" + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
+		}
 	}
-	else if (numCorrect >=2) {
-		results_image.innerHTML = '<img id=score_image src=assets/images/db.png alt=score_image></img>'
-		resultsArea.innerHTML = "I can't believe you only got " + numCorrect + ' out of ' + questions.length + ", I'm sending the Dark Brotherhood after you!" + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
-	}
-	else if (numCorrect >=0) {
-		results_image.innerHTML = '<img id=score_image src=assets/images/giant.png alt=score_image></img>'
-		resultsArea.innerHTML = "This couldn't be worse, you got " + numCorrect + ' out of ' + questions.length + ", you know about as much as a frost giant!" + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
-	}
-
-
 	let replay = document.getElementById("replay");
+
 	replay.onclick = function replayQuiz() {
 		resultsArea.innerHTML = '';
-		results_image.innerHTML=''
+		results_image.innerHTML='';
 		startQuiz()
 	}
 
