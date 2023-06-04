@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- favicon and google fonts -->
+    <!-- Favicon and google fonts -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
-
+    <!--Link to stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Elder Scrolls Quiz</title>
 </head>
@@ -26,30 +26,30 @@
     <h1 class="heading">
         Elder Scrolls Quiz
     </h1>
-    <!---->
+    <!--Area where quiz will be displayed on click of the start quiz button-->
     <div id="quiz">
         <button id="start" class="btn">Start Quiz!</button>
     </div>
-    <!---->
+    <!--Area where results will be displayed along with a corresponding image depending on the user score. This will happen on the click of the get results button once the quiz is displayed-->
     <div id="results_background">
         <button id="submit" class="btn">Get Results</button>
         <div id="results_image"></div> 
         <div id="results"></div>
     </div>
-    <!---->
+    <!--Area where the user can create a username and have it displayed back to them along with a welcome message-->
     <div id="username_background">
         <h3 id="username">Create Username:</h3>
             <div>
                 <p id="welcome-msg">Please only use letters for to create a username</p>
             </div>
             <form id="login-form" onsubmit="return false;">
-                <!---->
+                <!--Only letters are allowed to be typed into the username field. The form does not submit as value of username input is saved to cookies-->
                 <input type="text" name="username" id="username-field" class="form-input" placeholder="Username" onkeypress="return (event.charCode > 64 && 
                 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
                 <input type="submit" value="submit" id="form-submit" class="btn">
             </form>
     </div>
-    <!---->
+    <!--Link to Javascript file-->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
