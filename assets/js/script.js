@@ -152,6 +152,7 @@ function displayQuiz(questions, quizArea) {
  * Takes userAnswer and compares it to correct answer as per questions array.
  * If correct, numCorrect increments and answer becomes green.
  * Otherwise, answer becomes red.
+ * Questions not answered are highlighted in orange, full results are not displayed if there is an unanswered question.
  * Different result and image shown depending on score out of the quiz length.
  * Replay on click will wipe results section and reset quiz.
  */
