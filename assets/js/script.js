@@ -8,7 +8,7 @@ let results_image = document.getElementById('results_image');
 let create_username = document.getElementById('form-submit');
 let welcome = document.getElementById('welcome-msg');
 
-// array containing questions and answers, as well as the correct answers for the quiz
+// Array containing questions and answers, as well as the correct answers for the quiz
 
 let questions = [
 	{
@@ -222,7 +222,7 @@ start.onclick = function(){
 }
 
 // Allows user to create a username which will display back to them in a welcome message
-// functions createCookie and getCookie taken from StackOverflow with slight modifications, https://stackoverflow.com/questions/4825683/how-do-i-create-and-read-a-value-from-cookie-with-javascript
+// Functions createCookie and getCookie taken from StackOverflow with slight modifications, https://stackoverflow.com/questions/4825683/how-do-i-create-and-read-a-value-from-cookie-with-javascript
 /**
  * Takes a name and value parameter and data is saved as a cookie
  */
@@ -257,5 +257,10 @@ create_username.onclick = function() {
 	let identifier = "username"
 	createCookie(identifier, user);
 	userName = getCookie(identifier);
-	welcome.innerHTML = 'Hello ' + userName + ', welcome to the Elder Scrolls Quiz!'
+	if (userName === "") {
+		return;
+	}
+	else {
+		welcome.innerHTML = 'Hello ' + userName + ', welcome to the Elder Scrolls Quiz!'
+	}
 }
