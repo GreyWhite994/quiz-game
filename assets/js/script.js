@@ -160,10 +160,13 @@ function displayResults(questions, quizArea, resultsArea) {
 	let containAnswers = quizArea.querySelectorAll('.answers');
 	let userAnswer = '';
 	let numCorrect = 0;
+	var questionsUnanswered = 0;
 
 	for(let i=0; i<questions.length; i++) {
 
 		userAnswer = (containAnswers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+		
+		
 
 		if(userAnswer===questions[i].correctAnswer){
 			
@@ -171,7 +174,9 @@ function displayResults(questions, quizArea, resultsArea) {
 			
 			containAnswers[i].style.color = 'lightgreen';
 		}
-		
+		else if (userAnswer === undefined) {
+			containAnswers[i].style.color = 'orange';
+		}
 		else{
 			containAnswers[i].style.color = 'red';
 		}
@@ -198,8 +203,9 @@ function displayResults(questions, quizArea, resultsArea) {
 		resultsArea.innerHTML = "This couldn't be worse, you got " + numCorrect + ' out of ' + questions.length + ", you know about as much as a frost giant!" + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
 	}
 
+
 	let replay = document.getElementById("replay");
-	replay.onclick = function() {
+	replay.onclick = function replayQuiz() {
 		resultsArea.innerHTML = '';
 		results_image.innerHTML=''
 		startQuiz()

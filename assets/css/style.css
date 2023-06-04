@@ -90,6 +90,18 @@ body {
     padding: 1%;
 }
 
+#green {
+    color: lightgreen;
+}
+
+#red {
+    color: red;
+}
+
+#orange {
+    color: orange;
+}
+
 .question {
     font-size: 120%;
     margin: 15px;
