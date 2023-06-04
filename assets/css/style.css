@@ -129,10 +129,16 @@ body {
 @media screen and (max-width: 730px) {
 
     body {
-        background: url(../images/skyrim_snow.jpg) top repeat-y;
+        background: url(../images/skyrim_snow.jpg) top fixed;
+    }
+
+    #form-submit {
+        display: block;
+        margin-top: 10px;
     }
 
     label {
         display: block;
+        margin-top: 5px;
     }
 }
