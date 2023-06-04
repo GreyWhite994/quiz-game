@@ -246,6 +246,7 @@ function getCookie(name) {
 	}
 	return "";
 }
+
 /** 
  * On click of create_username the value entered into username-field is taken and put into variable user
  * identifier and user are passed to createCookie
@@ -262,5 +263,5 @@ create_username.onclick = function() {
 	}
 	else {
 		welcome.innerHTML = 'Hello ' + userName + ', welcome to the Elder Scrolls Quiz!'
-	}
+	}    
 }
