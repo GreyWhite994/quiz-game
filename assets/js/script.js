@@ -122,6 +122,7 @@ let questions = [
 function displayQuiz(questions, quizArea) {
 	let quiz = [];
 	let qNumber = 0;
+  let letter = "";
 
 	for (let i=0; i<questions.length; i++) {
 		qNumber = qNumber+1;
@@ -130,16 +131,12 @@ function displayQuiz(questions, quizArea) {
 		for(letter in questions[i].answers) {
 			answers.push(
 				'<label>'
-					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
-					+ letter + ': '
-					+ questions[i].answers[letter]
-				+ '</label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">' + letter + ': ' + questions[i].answers[letter] + '</label>'
 			);
 		}
 
 		quiz.push(
-			'<div class="question">' + qNumber + '. ' + questions[i].question + '</div>'
-			+ '<div class="answers">' + answers.join('') + '</div>'
+			'<div class="question">' + qNumber + '. ' + questions[i].question + '</div>' + '<div class="answers">' + answers.join('') + '</div>'
 		);
 		}
 		quizArea.innerHTML = quiz.join('');
@@ -168,9 +165,9 @@ function displayResults(questions, quizArea, resultsArea) {
 		
 
 		if (userAnswer===undefined) {
-			alert("Please answer all the questions!")
+			alert("Please answer all the questions!");
 			containAnswers[i].style.color = 'orange';
-			notAnswered+=1
+			notAnswered+=1;
 			break;
 		}
 		else if(userAnswer===questions[i].correctAnswer){
@@ -186,23 +183,23 @@ function displayResults(questions, quizArea, resultsArea) {
 	
 	if (notAnswered===0) {
 		if (numCorrect >= 8){
-			results_image.innerHTML = '<img id=score_image src=assets/images/todd.png alt=score_image></img>'
+			results_image.innerHTML = '<img id=score_image src=assets/images/todd.png alt=score_image></img>';
 			resultsArea.innerHTML = 'Well done! You got ' + numCorrect + ' out of ' + questions.length + ', Todd Howard would be proud' + '<br></br>' + '<button id="replay" class="btn"S>Start Again?</Button>';
 			}
 		else if (numCorrect >=6){
-			results_image.innerHTML = '<img id=score_image src=assets/images/alduin.png alt=score_image></img>'
+			results_image.innerHTML = '<img id=score_image src=assets/images/alduin.png alt=score_image></img>';
 			resultsArea.innerHTML = 'Good job! You got ' + numCorrect + ' out of ' + questions.length + ', keep trying to improve your Elder Scrolls knowledge' + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
 			}
 		else if (numCorrect >=4) {
-			results_image.innerHTML = '<img id=score_image src=assets/images/oblivion.png alt=score_image></img>'
+			results_image.innerHTML = '<img id=score_image src=assets/images/oblivion.png alt=score_image></img>';
 			resultsArea.innerHTML = 'Ouch, you only got ' + numCorrect + ' out of ' + questions.length + ', you deserve to be sent to Oblivion' + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
 		}
 		else if (numCorrect >=2) {
-			results_image.innerHTML = '<img id=score_image src=assets/images/db.png alt=score_image></img>'
+			results_image.innerHTML = '<img id=score_image src=assets/images/db.png alt=score_image></img>';
 			resultsArea.innerHTML = "I can't believe you only got " + numCorrect + ' out of ' + questions.length + ", I'm sending the Dark Brotherhood after you!" + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
 		}
 		else if (numCorrect >=0) {
-			results_image.innerHTML = '<img id=score_image src=assets/images/giant.png alt=score_image></img>'
+			results_image.innerHTML = '<img id=score_image src=assets/images/giant.png alt=score_image></img>';
 			resultsArea.innerHTML = "This couldn't be worse, you got " + numCorrect + ' out of ' + questions.length + ", you know about as much as a frost giant!" + '<br></br>' + '<button id="replay" class="btn">Start Again?</Button>';
 		}
 	}
@@ -211,8 +208,8 @@ function displayResults(questions, quizArea, resultsArea) {
 	replay.onclick = function replayQuiz() {
 		resultsArea.innerHTML = '';
 		results_image.innerHTML='';
-		startQuiz()
-	}
+		startQuiz();
+	};
 
 	}
 /**
@@ -223,12 +220,12 @@ function startQuiz() {
 	displayQuiz(questions, quizArea);
 	submit.onclick = function(){
 		displayResults(questions, quizArea, resultsArea);
-	}
+	};
 }
 // On click of start, the startQuiz function will be called
 start.onclick = function(){
-	startQuiz()
-}
+	startQuiz();
+};
 
 // Allows user to create a username which will display back to them in a welcome message
 // Functions createCookie and getCookie taken from StackOverflow with slight modifications, https://stackoverflow.com/questions/4825683/how-do-i-create-and-read-a-value-from-cookie-with-javascript
@@ -264,13 +261,13 @@ function getCookie(name) {
 */
 create_username.onclick = function() {
 	let user = document.getElementById("username-field").value;
-	let identifier = "username"
+	let identifier = "username";
 	createCookie(identifier, user);
-	userName = getCookie(identifier);
+	let userName = getCookie(identifier);
 	if (userName === "") {
 		return;
 	}
 	else {
-		welcome.innerHTML = 'Hello ' + userName + ', welcome to the Elder Scrolls Quiz!'
+		welcome.innerHTML = 'Hello ' + userName + ', welcome to the Elder Scrolls Quiz!';
 	}    
-}
+};
