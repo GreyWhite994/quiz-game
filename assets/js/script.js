@@ -122,22 +122,19 @@ let questions = [
 function displayQuiz(questions, quizArea) {
 	let quiz = [];
 	let qNumber = 0;
-  let letter = "";
+  	let letter = "";
+
+	// Inspiration for code below taken from https://stackoverflow.com/questions/61744369/i-want-to-create-quiz
 
 	for (let i=0; i<questions.length; i++) {
 		qNumber = qNumber+1;
 		let answers=[];
 
 		for(letter in questions[i].answers) {
-			answers.push(
-				'<label>'
-					+ '<input type="radio" name="question'+i+'" value="'+letter+'">' + letter + ': ' + questions[i].answers[letter] + '</label>'
-			);
+			answers.push('<label>' + '<input type="radio" name="question'+i+'" value="'+letter+'">' + letter + ': ' + questions[i].answers[letter] + '</label>');
 		}
 
-		quiz.push(
-			'<div class="question">' + qNumber + '. ' + questions[i].question + '</div>' + '<div class="answers">' + answers.join('') + '</div>'
-		);
+		quiz.push('<div class="question">' + qNumber + '. ' + questions[i].question + '</div>' + '<div class="answers">' + answers.join('') + '</div>');
 		}
 		quizArea.innerHTML = quiz.join('');
 		
@@ -161,6 +158,8 @@ function displayResults(questions, quizArea, resultsArea) {
 	let notAnswered = 0;
 
 	for(let i=0; i<questions.length; i++) {
+		// Inspiration for code below taken from https://stackoverflow.com/questions/61744369/i-want-to-create-quiz
+
 		userAnswer = (containAnswers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 		
 

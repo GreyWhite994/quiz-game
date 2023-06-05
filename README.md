@@ -89,6 +89,7 @@ and get different feedback and images based on their score.
 ### Content
 - Learning how to create and read cookies taken from Stack Overflow (https://stackoverflow.com/questions/4825683/how-do-i-create-and-read-a-value-from-cookie-with-javascript)
 - Inspiration for how to structure quiz and answers from Stack Overflow (https://stackoverflow.com/questions/68687270/increment-score-in-a-quiz-game-based-on-selecting-the-right-answers-with-an-obje)
+- How to display quiz and check user answers (https://stackoverflow.com/questions/61744369/i-want-to-create-quiz)
 
 ### Media
 - Free Images taken from [PNGEGG](https://www.pngegg.com/en/search?q=skyrim)
