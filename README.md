@@ -83,11 +83,12 @@ and get different feedback and images based on their score.
     Go to the settings tab on Github repository.
     - Click on Github pages tab on the sidebar, select main branch on the dropdown menu. 
     - Following this, the page will be re-loaded with a detailed ribbon display to indicate it was successful. 
-    live link can be found here - 
+    live link can be found here - https://greywhite994.github.io/quiz-game/
 
 ## Credits 
 ### Content
-- 
+- Learning how to create and read cookies taken from Stack Overflow (https://stackoverflow.com/questions/4825683/how-do-i-create-and-read-a-value-from-cookie-with-javascript)
+- Inspiration for how to structure quiz and answers from Stack Overflow (https://stackoverflow.com/questions/68687270/increment-score-in-a-quiz-game-based-on-selecting-the-right-answers-with-an-obje)
 
 ### Media
 - Free Images taken from [PNGEGG](https://www.pngegg.com/en/search?q=skyrim)
